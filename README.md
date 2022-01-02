@@ -9,14 +9,14 @@ A simple program written in python using the pyttsx3 module that narrates any te
 
 ## Installation
 
-* Colorama
-```
-  pip install colorama
-```
-
 * Pyttsx3
 ```
   pip install pyttsx3
+```
+
+* Colorama
+```
+  pip install colorama
 ```
 ## Badges
 
