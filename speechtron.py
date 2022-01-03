@@ -1,4 +1,5 @@
 import pyttsx3
+import os
 import colorama
 from colorama import Fore, Back
 
@@ -42,8 +43,16 @@ elif usr_option.lower() == "r":
         engine.runAndWait()
 
         c_path = input(Fore.YELLOW + "Enter file name: ")
+        file_exist = os.path.isfile(c_path)
+        if file_exist == False:
+            print(Fore.BLACK + Back.RED + " FILE NOT FOUND ")
+            engine = pyttsx3.init()
+            engine.say("FILE NOT FOUND")
+            engine.runAndWait()
+
         with open(c_path, 'rb') as file:
             reading_file1 = file.read()
+            print(reading_file1)
         engine = pyttsx3.init()
         engine.say(reading_file1)
         engine.runAndWait()
@@ -60,6 +69,13 @@ elif usr_option.lower() == "r":
         engine.runAndWait()
 
         a_path = input(Fore.YELLOW + "Enter file path: ")
+        file_exist = os.path.isfile(a_path)
+        if file_exist == False:
+            print(" FILE NOT FOUND ")
+            engine = pyttsx3.init()
+            engine.say(Fore.BLACK + Back.RED + "FILE NOT FOUND")
+            engine.runAndWait()
+
         with open(a_path, 'rb') as file:
             reading_file2 = file.read()
         engine = pyttsx3.init()
@@ -71,3 +87,15 @@ elif usr_option.lower() == "r":
         engine = pyttsx3.init()
         engine.say(speak5)
         engine.runAndWait()
+
+    else:
+        print(Fore.BLACK + Back.RED + " INVALID OPTION ")
+        engine = pyttsx3.init()
+        engine.say("INVALID OPTION")
+        engine.runAndWait()
+
+else:
+    print(Fore.BLACK + Back.RED + " INVALID OPTION ")
+    engine = pyttsx3.init()
+    engine.say("INVALID OPTION")
+    engine.runAndWait()
