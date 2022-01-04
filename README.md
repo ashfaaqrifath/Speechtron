@@ -4,7 +4,7 @@ A simple program written in python using the pyttsx3 module that narrates any te
 
 ## Coded by
 
-- [@ashfaaqrfth](https://ashfaaq.epizy.com/)
+- [@ashfaaqrifath](https://ashfaaq.epizy.com/)
 
 
 ## Installation
