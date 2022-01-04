@@ -2,9 +2,9 @@
 A simple text to speech program written in python using the pyttsx3 module that narrates any text entered by the user or reading a file entered by the user.
 
 
-## Coded by
+## Coded by💻
 
-- [@ashfaaqrifath](https://ashfaaq.epizy.com/)
+- [ashfaaqrifath](https://github.com/ashfaaqrifath/)
 
 
 ## Installation
