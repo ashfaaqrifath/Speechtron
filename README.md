@@ -7,7 +7,7 @@ A simple text to speech program written in python using the pyttsx3 module that 
 - [ashfaaqrifath](https://github.com/ashfaaqrifath/)
 
 
-## Installation
+## Modules used
 
 * Pyttsx3
 ```
