@@ -1,5 +1,5 @@
 # Speechtron Text To Speech
-A simple text to speech program written in python using the pyttsx3 module that narrates any text entered by the user or reading a file entered by the user.
+A simple text to speech program written in python using the pyttsx3 module that narrates any text entered by the user or reading a file entered by the user. Audio files of the narration can be saved in mp3 format.
 
 
 ## Coded by💻
