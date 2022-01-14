@@ -1,101 +1,121 @@
 import pyttsx3
-import os
+from pathlib import Path
 import colorama
 from colorama import Fore, Back
-
 colorama.init(autoreset=True)
 
-speak1 = " Speechtron basic text narrator. Read file or enter text for narration. "
-print(Fore.BLACK + Back.BLUE + speak1)
-print("Copyright (c) 2022 Ashfaaq Rifath")
-engine = pyttsx3.init()
-engine.say(speak1)
-engine.runAndWait()
+def Speechtron(speak):
+    engine = pyttsx3.init()
+    engine.say(speak)
+    engine.runAndWait()
+
+print(Fore.BLACK + Back.BLUE + " Speechtron basic text narrator. Read file or enter text for narration. ")
+Speechtron("Speechtron basic text narrator. Read file or enter text for narration.")
 
 usr_option = input(Fore.CYAN + "Read file or enter text (r/t)? ")
 
 if usr_option.lower() == "t":
-    engine = pyttsx3.init()
-    engine.say("enter your text for narration")
-    engine.runAndWait()
-
+    Speechtron("Enter your text for narration")
     user_input = input(Fore.YELLOW + "Enter your text for narration: ")
-    engine = pyttsx3.init()
-    engine.say(user_input)
-    engine.runAndWait()
+    saving = "narrating user input. " + user_input + ". narration completed"
 
-    speak3 = "Narration completed"
-    print(Fore.GREEN + speak3)
-    engine = pyttsx3.init()
-    engine.say(speak3)
-    engine.runAndWait()
+    Speechtron(user_input)
+
+    print(Fore.GREEN + "Narration completed")
+    Speechtron("Narration completed")
+
+    Speechtron("Do you want to save audio file")
+    save_ask = input("Do you want to save audio file (y/n): ")
+
+    if save_ask.lower() == "y":
+        Speechtron("Name your file")
+        naming_file = input("Name your file: ")
+        engine = pyttsx3.init()
+        engine.save_to_file(saving, naming_file + '.mp3')
+        engine.runAndWait()
+        print("Audio file saved")
+        Speechtron("Audio file saved")
 
 elif usr_option.lower() == "r":
-    engine = pyttsx3.init()
-    engine.say("Current path or absolute path")
-    engine.runAndWait()
-
+    Speechtron("Current path or absolute path")
     usr_file_path = input(Fore.CYAN + "Current path or absolute path (c/a)? ")
 
     if usr_file_path.lower() == "c":
-        engine = pyttsx3.init()
-        engine.say("Enter file name")
-        engine.runAndWait()
-
+        Speechtron("Enter file name")
         c_path = input(Fore.YELLOW + "Enter file name: ")
-        file_exist = os.path.isfile(c_path)
-        if file_exist == False:
+
+        path_to_file = c_path
+        path = Path(path_to_file)
+
+        if path.is_file():
+            print(f"Narrating file {c_path}")
+            Speechtron(f"Narrating file {c_path}")
+            with open(c_path, 'rb') as file:
+                reading_file1 = file.read()
+                #converting bytes to string, because some text might be in bytes when copy paste.
+                narrate = str(reading_file1, 'UTF-8')
+                print(narrate)
+                savefile = f"narrating file {c_path}. " + narrate + " Narration completed"
+            Speechtron(narrate)
+
+            print(Fore.GREEN + "Narration completed")
+            Speechtron("Narration completed")
+
+            Speechtron("Do you want to save audio file")
+            save_ask = input("Do you want to save audio file (y/n): ")
+
+            if save_ask.lower() == "y":
+                Speechtron("Name your file")
+                naming_file = input("Name your file: ")
+                engine = pyttsx3.init()
+                engine.save_to_file(savefile, naming_file + ".mp3")
+                engine.runAndWait()
+                print("Audio file saved")
+                Speechtron("Audio file saved")
+        else:
             print(Fore.BLACK + Back.RED + " FILE NOT FOUND ")
-            engine = pyttsx3.init()
-            engine.say("FILE NOT FOUND")
-            engine.runAndWait()
-
-        with open(c_path, 'rb') as file:
-            reading_file1 = file.read()
-            print(reading_file1)
-        engine = pyttsx3.init()
-        engine.say(reading_file1)
-        engine.runAndWait()
-
-        speak4 = "Narration completed"
-        print(Fore.GREEN + speak4)
-        engine = pyttsx3.init()
-        engine.say(speak4)
-        engine.runAndWait()
+            Speechtron(" FILE NOT FOUND ")
 
     elif usr_file_path.lower() == "a":
-        engine = pyttsx3.init()
-        engine.say("Enter file path")
-        engine.runAndWait()
-
+        Speechtron("Enter file path")
         a_path = input(Fore.YELLOW + "Enter file path: ")
-        file_exist = os.path.isfile(a_path)
-        if file_exist == False:
-            print(" FILE NOT FOUND ")
-            engine = pyttsx3.init()
-            engine.say(Fore.BLACK + Back.RED + "FILE NOT FOUND")
-            engine.runAndWait()
 
-        with open(a_path, 'rb') as file:
-            reading_file2 = file.read()
-        engine = pyttsx3.init()
-        engine.say(reading_file2)
-        engine.runAndWait()
+        path_to_file = a_path
+        path = Path(path_to_file)
 
-        speak5 = "Narration completed"
-        print(Fore.GREEN + speak5)
-        engine = pyttsx3.init()
-        engine.say(speak5)
-        engine.runAndWait()
+        if path.is_file():
+            print(f"Narrating file {a_path}")
+            Speechtron(f"Narrating file {a_path}")
+            with open(a_path, 'rb') as file:
+                reading_file2 = file.read()
+                # converting bytes to string, because some text might be in bytes when copy paste.
+                narrate = str(reading_file2, 'UTF-8')
+                print(narrate)
+                savefile = f"narrating file {a_path}. " + narrate + " Narration completed"
+            Speechtron(narrate)
+
+            print(Fore.GREEN + "Narration completed")
+            Speechtron("Narration completed")
+
+            Speechtron("Do you want to save audio file")
+            save_ask = input("Do you want to save audio file (y/n): ")
+
+            if save_ask.lower() == "y":
+                Speechtron("Name your file")
+                naming_file = input("Name your file: ")
+                engine = pyttsx3.init()
+                engine.save_to_file(savefile, naming_file + ".mp3")
+                engine.runAndWait()
+                print("Audio file saved")
+                Speechtron("Audio file saved")
+        else:
+            print(Fore.BLACK + Back.RED + " FILE NOT FOUND ")
+            Speechtron(" FILE NOT FOUND ")
 
     else:
         print(Fore.BLACK + Back.RED + " INVALID OPTION ")
-        engine = pyttsx3.init()
-        engine.say("INVALID OPTION")
-        engine.runAndWait()
+        Speechtron("INVALID OPTION")
 
 else:
     print(Fore.BLACK + Back.RED + " INVALID OPTION ")
-    engine = pyttsx3.init()
-    engine.say("INVALID OPTION")
-    engine.runAndWait()
+    Speechtron("INVALID OPTION")
