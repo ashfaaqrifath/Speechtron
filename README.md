@@ -14,10 +14,15 @@ A simple text to speech program written in python using the pyttsx3 module that 
   pip install pyttsx3
 ```
 
+* Pathlib
+```
+  pip install pathlib
+```
+
 * Colorama
 ```
   pip install colorama
-```
+  
 ## Badges
 
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
