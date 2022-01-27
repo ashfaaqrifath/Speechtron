@@ -34,4 +34,4 @@ A simple text to speech program written in python using the pyttsx3 module that 
 
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)  Copyright © 2022 Ashfaaq Rifath
 ##
-![Logo](https://ashfaaqrifath.github.io/aq%20logo.jpg)
+![Logo](https://ashfaaqrifath.github.io/aq%20logo.png)
