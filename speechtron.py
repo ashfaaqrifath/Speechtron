@@ -27,8 +27,8 @@ def narrateComplt(count):
     Speechtron("Narration completed. " + str(word_count) + "words")
 
 
-print(Fore.BLACK + Back.BLUE + " Speechtron basic text narrator. Read file or enter text for narration. ")
-Speechtron("Speechtron basic text narrator. Read file or enter text for narration.")
+print(Fore.BLACK + Back.BLUE + " Speechtron text to speech. Enter file or text for narration. ")
+Speechtron("Speechtron text to speech. Enter file or text for narration.")
 
 usr_option = input(Fore.CYAN + "Read file or enter text (r/t): ")
 
@@ -93,7 +93,7 @@ elif usr_option.lower() == "r":
                 narrate = str(reading_file1, 'UTF-8')
                 print(narrate)
                 word_count = sum([i.strip(string.punctuation).isalpha() for i in narrate.split()])
-                savefile = f"narrating file: {c_path}. " + narrate + " Narration completed." + str(word_count) + "words."
+                savefile = f"narrating file: {c_path}. " + narrate + " Narration completed. " + str(word_count) + "words."
             Speechtron(narrate)
 
             narrateComplt(count=narrate)
@@ -125,9 +125,11 @@ elif usr_option.lower() == "r":
         path = Path(path_to_file)
 
         if path.is_file():
-            print("Narrating file.")
-            Speechtron("Narrating file.")
+
             with open(a_path, 'rb') as file:
+                print("Narrating absolute path file.")
+                Speechtron("Narrating absolute path file.")
+
                 reading_file2 = file.read()
                 # converting bytes to string, because some text might be in bytes when copy paste.
                 narrate = str(reading_file2, 'UTF-8')
