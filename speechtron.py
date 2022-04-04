@@ -144,7 +144,8 @@ elif usr_option.lower() == "r":
             showMessage(message="3")
 
     elif usr_file_path.lower() == "b":
-        
+
+        #tkinter file dialog to browse file
         browse_file = askopenfile(mode='r', filetypes=[('File types speechtron can read', '*.*')])
         if browse_file is not None:
             reading_file = browse_file.read()
