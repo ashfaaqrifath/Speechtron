@@ -1,5 +1,5 @@
 # Speechtron
-A simple text to speech program written in python using the pyttsx3 module that narrates any text entered by the user or reading a file entered by the user. Audio files of the narration can be saved in mp3 format.
+Speechtron is a text to speech narrator written in python with GUI integrated. It can browse for files or take input from the user for narration and save audio files of the narration if the user wants to.
 
 
 ## Coded by💻
@@ -7,7 +7,7 @@ A simple text to speech program written in python using the pyttsx3 module that 
 - [ashfaaqrifath](https://github.com/ashfaaqrifath/)
 
 
-## Modules used
+## Modules / Libraries used
 
 * Pyttsx3
 ```
