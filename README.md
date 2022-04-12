@@ -24,6 +24,11 @@ Speechtron is a text to speech narrator written in python with GUI integrated. I
   pip install colorama
 ```
 
+* Tkinter
+```
+  pip install tkinter
+```
+
 ## Badges
 
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
