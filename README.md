@@ -45,7 +45,7 @@ Speechtron is a text to speech narrator written in python with GUI integrated. I
 
 ## License
 
-Copyright © 2022 Ashfaaq Rifath [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs) 
+Copyright © 2022 Ashfaaq Rifath - Speechtron v2.2.0 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs) 
 
 
 ##
