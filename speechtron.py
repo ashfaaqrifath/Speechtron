@@ -1,6 +1,6 @@
-from os import read
 import pyttsx3
 from pathlib import Path
+from os import read
 import string
 from tkinter import *
 from tkinter.ttk import *
@@ -38,23 +38,26 @@ def narrateComplt(count):
     Speechtron(speak="Narration completed. " + str(word_count) + "words", voice=narrator_voice)
 
 
-print(Fore.BLACK + Back.BLUE + " Speechtron - text to speech narrator. ")
-Speechtron(speak="Speechtron - text to speech narrator.", voice=0)
+print(Fore.BLACK + Back.BLUE + " Speechtron v2.2.1 - text to speech narrator. ")
+Speechtron(speak="Speechtron - text to speech narrator.", voice=2)
 
 print(Fore.YELLOW + 
 '''
 Available voices :-
 
-0 - Duncan (Default)
-1 - Adriana
-2 - Natasha
-3 - Gibberish
+0 - Microsoft David
+1 - Microsoft Linda
+2 - Microsoft Mark (Default)
+3 - Cortana
+4 - Microsoft Hazel
+5 - Microsoft Catherine
+6 - Microsoft Zira
 ''')
-Speechtron(speak="Choose narrator voice", voice=0)
+Speechtron(speak="Choose narrator voice", voice=2)
 narrator_voice = int(input(Fore.LIGHTYELLOW_EX + "Choose narrator voice: "))
 
 Speechtron(speak="Read file or enter text.", voice=narrator_voice)
-usr_option = input(Fore.CYAN + "Read file or enter text (r/t): ")
+usr_option = input(Fore.CYAN + "Read file or enter text ? (r/t): ")
 
 var1 = ['r', 'R', 't', 'T']
 while usr_option not in var1:
