@@ -31,6 +31,7 @@ Speechtron is a text to speech narrator written in python with GUI integrated. I
 ## Features
 
 - Change narrator voices
+- 8 voices
 - Save audio file
 - File browser dialog
 
