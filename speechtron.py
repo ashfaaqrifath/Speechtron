@@ -207,3 +207,8 @@ elif usr_option.lower() == "r":
 
         elif save_ask.lower() == "n":
             showMessage(message="5")
+            
+            
+            
+            
+ # <<< Copyright (c) 2022 Ashfaaq Rifath - Speechtron v2.2.1 >>>
